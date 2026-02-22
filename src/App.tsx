@@ -258,9 +258,10 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/images/hero-taxi.jpg)' }}
+          style={{ backgroundImage: 'url(/images/cover-hero.png)' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
 
         {/* Content */}
@@ -481,14 +482,17 @@ function Home() {
 
           <div className="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {[
-              { airport: 'Schiphol Airport', price: 'Vanaf €85', time: 'ca. 60 min' },
-              { airport: 'Eindhoven Airport', price: 'Vanaf €65', time: 'ca. 45 min' },
-              { airport: 'Rotterdam Airport', price: 'Vanaf €55', time: 'ca. 35 min' }
+              { airport: 'Schiphol Airport', oldPrice: '€180', newPrice: '€129', time: 'ca. 60 min' },
+              { airport: 'Eindhoven Airport', oldPrice: '€150', newPrice: '€119', time: 'ca. 45 min' },
+              { airport: 'Rotterdam Airport', oldPrice: '€120', newPrice: '€89', time: 'ca. 35 min' }
             ].map((item, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 text-center hover:bg-white/20 transition-colors">
                 <Plane className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 text-[#c9a227]" />
                 <h3 className="text-base md:text-xl font-bold mb-2">{item.airport}</h3>
-                <div className="text-2xl md:text-3xl font-bold text-[#c9a227] mb-1 md:mb-2">{item.price}</div>
+                <div className="mb-1 md:mb-2">
+                  <span className="text-lg md:text-xl text-white/50 line-through mr-2">{item.oldPrice}</span>
+                  <span className="text-2xl md:text-3xl font-bold text-[#c9a227]">{item.newPrice}</span>
+                </div>
                 <div className="text-white/70 text-xs md:text-sm">{item.time}</div>
               </div>
             ))}
