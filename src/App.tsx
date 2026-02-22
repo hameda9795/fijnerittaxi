@@ -170,13 +170,13 @@ function Home() {
           }`}
       >
         <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-20 md:h-24 lg:h-28">
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/images/logo.png"
+                src={isScrolled ? "/images/logo-dark.png" : "/images/logo-white.png"}
                 alt="Fijn Rit Taxi"
-                className="h-10 md:h-12 w-auto"
+                className="h-16 md:h-20 lg:h-24 w-auto transition-opacity duration-300"
               />
             </div>
 
@@ -629,9 +629,9 @@ function Home() {
               <div>
                 <div className="bg-white rounded-lg p-3 inline-block mb-4 md:mb-6">
                   <img
-                    src="/images/logo.png"
+                    src="/images/logo-dark.png"
                     alt="Fijn Rit Taxi"
-                    className="h-10 md:h-12 w-auto"
+                    className="h-16 md:h-20 lg:h-24 w-auto"
                   />
                 </div>
                 <p className="text-gray-400 leading-relaxed text-sm md:text-base">
