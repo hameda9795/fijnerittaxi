@@ -182,23 +182,23 @@ function Home() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-800 hover:text-[#1a5f3f] font-medium transition-colors text-sm lg:text-base">
+              <button onClick={() => scrollToSection('home')} className={`${isScrolled ? 'text-[#1e40af] hover:text-[#f59e0b]' : 'text-[#1e40af] hover:text-[#f59e0b]'} font-bold transition-colors text-base lg:text-lg drop-shadow-md`}>
                 Home
               </button>
-              <button onClick={() => scrollToSection('diensten')} className="text-gray-800 hover:text-[#1a5f3f] font-medium transition-colors text-sm lg:text-base">
+              <button onClick={() => scrollToSection('diensten')} className={`${isScrolled ? 'text-[#1e40af] hover:text-[#f59e0b]' : 'text-[#1e40af] hover:text-[#f59e0b]'} font-bold transition-colors text-base lg:text-lg drop-shadow-md`}>
                 Diensten
               </button>
-              <button onClick={() => scrollToSection('over-ons')} className="text-gray-800 hover:text-[#1a5f3f] font-medium transition-colors text-sm lg:text-base">
+              <button onClick={() => scrollToSection('over-ons')} className={`${isScrolled ? 'text-[#1e40af] hover:text-[#f59e0b]' : 'text-[#1e40af] hover:text-[#f59e0b]'} font-bold transition-colors text-base lg:text-lg drop-shadow-md`}>
                 Over Ons
               </button>
-              <button onClick={() => scrollToSection('reviews')} className="text-gray-800 hover:text-[#1a5f3f] font-medium transition-colors text-sm lg:text-base">
+              <button onClick={() => scrollToSection('reviews')} className={`${isScrolled ? 'text-[#1e40af] hover:text-[#f59e0b]' : 'text-[#1e40af] hover:text-[#c9a227]'} font-bold transition-colors text-base lg:text-lg drop-shadow-md`}>
                 Reviews
               </button>
-              <button onClick={goToBlog} className="text-gray-800 hover:text-[#1a5f3f] font-medium transition-colors flex items-center gap-1 text-sm lg:text-base">
+              <button onClick={goToBlog} className={`${isScrolled ? 'text-[#1e40af] hover:text-[#f59e0b]' : 'text-[#1e40af] hover:text-[#f59e0b]'} font-bold transition-colors flex items-center gap-1 text-base lg:text-lg drop-shadow-md`}>
                 <Newspaper className="w-4 h-4" />
                 Blog
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-800 hover:text-[#1a5f3f] font-medium transition-colors text-sm lg:text-base">
+              <button onClick={() => scrollToSection('contact')} className={`${isScrolled ? 'text-[#1e40af] hover:text-[#f59e0b]' : 'text-[#1e40af] hover:text-[#f59e0b]'} font-bold transition-colors text-base lg:text-lg drop-shadow-md`}>
                 Contact
               </button>
             </div>
@@ -213,7 +213,7 @@ function Home() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2"
+              className={`md:hidden p-2 text-[#1e40af]`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -225,23 +225,23 @@ function Home() {
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-lg">
             <div className="px-4 py-4 space-y-2">
-              <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#1a5f3f] text-base">
+              <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#f59e0b] text-base">
                 Home
               </button>
-              <button onClick={() => scrollToSection('diensten')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#1a5f3f] text-base">
+              <button onClick={() => scrollToSection('diensten')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#f59e0b] text-base">
                 Diensten
               </button>
-              <button onClick={() => scrollToSection('over-ons')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#1a5f3f] text-base">
+              <button onClick={() => scrollToSection('over-ons')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#f59e0b] text-base">
                 Over Ons
               </button>
-              <button onClick={() => scrollToSection('reviews')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#1a5f3f] text-base">
+              <button onClick={() => scrollToSection('reviews')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#f59e0b] text-base">
                 Reviews
               </button>
-              <button onClick={goToBlog} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#1a5f3f] flex items-center gap-2 text-base">
+              <button onClick={goToBlog} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#f59e0b] flex items-center gap-2 text-base">
                 <Newspaper className="w-4 h-4" />
                 Blog
               </button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#1a5f3f] text-base">
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2.5 text-gray-800 hover:text-[#f59e0b] text-base">
                 Contact
               </button>
               <button onClick={openWhatsApp} className="btn-whatsapp w-full justify-center mt-4 py-3">
@@ -289,7 +289,7 @@ function Home() {
               <button
                 onClick={() => scrollToSection('diensten')}
                 className="px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold border-2 border-white text-white 
-                         hover:bg-white hover:text-[#1a5f3f] transition-all duration-300 text-sm md:text-base"
+                         hover:bg-white hover:text-[#f59e0b] transition-all duration-300 text-sm md:text-base"
               >
                 Onze Diensten
               </button>
