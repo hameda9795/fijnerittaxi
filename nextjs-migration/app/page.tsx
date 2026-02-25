@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import StructuredData from "@/components/StructuredData";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Fijn Rit Taxi | Betrouwbaar Taxi & Luchthavenvervoer in Gorinchem",
@@ -79,34 +80,30 @@ export default function Home() {
       <StructuredData />
       <div className="min-h-screen bg-white">
 
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-20">
-              <Image src="/images/logo.png" alt="Fijn Rit Taxi" width={120} height={48} className="h-12 w-auto" priority />
-              <div className="hidden md:flex items-center space-x-6">
-                <a href="#home" className="text-[#1e40af] hover:text-[#f59e0b] font-semibold transition-colors">Home</a>
-                <a href="#diensten" className="text-[#1e40af] hover:text-[#f59e0b] font-semibold transition-colors">Diensten</a>
-                <a href="#over-ons" className="text-[#1e40af] hover:text-[#f59e0b] font-semibold transition-colors">Over Ons</a>
-                <a href="#reviews" className="text-[#1e40af] hover:text-[#f59e0b] font-semibold transition-colors">Reviews</a>
-                <Link href="/blog" className="text-[#1e40af] hover:text-[#f59e0b] font-semibold transition-colors flex items-center gap-1">
-                  <Newspaper className="w-4 h-4" />Blog
-                </Link>
-                <a href="#contact" className="text-[#1e40af] hover:text-[#f59e0b] font-semibold transition-colors">Contact</a>
-              </div>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-sm py-2 px-4">
-                <MessageCircle className="w-4 h-4" />BOEKEN
-              </a>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
 
         {/* Hero */}
-        <section id="home" className="relative min-h-screen flex items-center pt-20">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url(/images/cover-hero.png)" }}>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+          {/* Desktop background */}
+          <Image
+            src="/images/cover-hero.png"
+            alt="Fijn Rit Taxi Hero"
+            fill
+            className="object-cover object-center hidden md:block"
+            priority
+            sizes="100vw"
+          />
+          {/* Mobile background */}
+          <Image
+            src="/images/hero-mobile.jpg"
+            alt="Fijn Rit Taxi Hero"
+            fill
+            className="object-cover object-center block md:hidden"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 lg:pt-28">
             <div className="max-w-2xl animate-slide-up">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white mb-6">
                 <Star className="w-4 h-4 text-[#c9a227]" />
@@ -132,6 +129,10 @@ export default function Home() {
                 <div><div className="text-3xl font-bold text-[#c9a227]">5★</div><div className="text-white/80 text-sm">Beoordeling</div></div>
               </div>
             </div>
+          </div>
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white rotate-90" />
           </div>
         </section>
 
