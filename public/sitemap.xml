@@ -3,15 +3,15 @@
   <!-- Homepage -->
   <url>
     <loc>https://fijnerittaxi.nl/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Optional Additions Later (Examples)
+  <!-- Blog -->
   <url>
-    <loc>https://fijnerittaxi.nl/contact</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://fijnerittaxi.nl/blog</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  -->
 </urlset>
