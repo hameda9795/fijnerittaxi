@@ -4,12 +4,12 @@ import { Phone, MessageCircle, Plane, Clock, Shield, CheckCircle, Luggage, MapPi
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luchthavenvervoer Gorinchem | Vaste Prijs €129 naar Schiphol | Fijn Rit Taxi",
-  description: "Betrouwbaar luchthavenvervoer vanuit Gorinchem naar Schiphol (€129), Eindhoven (€119) en Rotterdam (€89). Vaste lage prijzen, geen verrassingen. Boek via WhatsApp: 06 43463636.",
+  title: "Luchthavenvervoer Gorinchem | Schiphol, Eindhoven, Rotterdam | Vaste Prijs",
+  description: "Betrouwbaar luchthavenvervoer vanuit Gorinchem naar Schiphol, Eindhoven en Rotterdam Airport. Vaste lage prijzen, geen verrassingen. Boek via WhatsApp: 06 43463636.",
   alternates: { canonical: "https://fijnerittaxi.nl/luchthavenvervoer" },
   openGraph: {
-    title: "Luchthavenvervoer Gorinchem | Vaste Prijs €129 naar Schiphol",
-    description: "Luchthavenvervoer naar Schiphol (€129), Eindhoven (€119), Rotterdam (€89). Vaste prijzen vanuit Gorinchem. Boek via WhatsApp.",
+    title: "Luchthavenvervoer Gorinchem | Fijn Rit Taxi",
+    description: "Luchthavenvervoer naar Schiphol, Eindhoven, Rotterdam. Vaste prijzen vanuit Gorinchem. Boek via WhatsApp.",
     url: "https://fijnerittaxi.nl/luchthavenvervoer",
     siteName: "Fijn Rit Taxi",
     locale: "nl_NL",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 const WA_LINK = "https://wa.me/31643463636";
 
 const airports = [
-  { name: "Schiphol Airport", price: "€129", oldPrice: "€180", time: "ca. 60 min", features: ["Directe route", "Flight tracking", "24/7 service"] },
-  { name: "Eindhoven Airport", price: "€119", oldPrice: "€150", time: "ca. 45 min", features: ["Directe route", "Vaste prijs", "Comfortabele auto"] },
-  { name: "Rotterdam Airport", price: "€89", oldPrice: "€120", time: "ca. 35 min", features: ["Dichtbij", "Snelle service", "Vaste prijs"] },
+  { name: "Schiphol Airport", time: "ca. 60 min", features: ["Directe route", "Flight tracking", "24/7 service"] },
+  { name: "Eindhoven Airport", time: "ca. 45 min", features: ["Directe route", "Vaste prijs", "Comfortabele auto"] },
+  { name: "Rotterdam Airport", time: "ca. 35 min", features: ["Dichtbij", "Snelle service", "Vaste prijs"] },
 ];
 
 export default function LuchthavenvervoerPage() {
@@ -53,11 +53,11 @@ export default function LuchthavenvervoerPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Luchthavenvervoer vanuit Gorinchem naar Schiphol, Eindhoven & Rotterdam
+                Luchthavenvervoer Gorinchem
               </h1>
               <p className="text-xl text-white/90 mb-8">
                 Comfortabel vervoer naar Schiphol, Eindhoven en Rotterdam Airport. 
-                Vaste lage prijzen vanaf €89, geen verrassingen achteraf. 24/7 beschikbaar.
+                Vaste lage prijzen, geen verrassingen achteraf. 24/7 beschikbaar.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={WA_LINK} className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 flex items-center justify-center gap-2">
@@ -73,70 +73,17 @@ export default function LuchthavenvervoerPage() {
           </div>
         </section>
 
-        {/* Price Table */}
+        {/* Airports */}
         <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Vaste Prijzen Luchthavenvervoer
-            </h2>
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-[#1a5f3f] text-white">
-                  <tr>
-                    <th className="py-4 px-6 text-left">Luchthaven</th>
-                    <th className="py-4 px-6 text-center">Reistijd</th>
-                    <th className="py-4 px-6 text-right">Vaste Prijs</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="py-4 px-6 font-semibold">Schiphol Airport</td>
-                    <td className="py-4 px-6 text-center text-gray-600">ca. 60 min</td>
-                    <td className="py-4 px-6 text-right">
-                      <span className="text-gray-400 line-through mr-2">€180</span>
-                      <span className="text-2xl font-bold text-[#1a5f3f]">€129</span>
-                    </td>
-                  </tr>
-                  <tr className="border-b bg-gray-50">
-                    <td className="py-4 px-6 font-semibold">Eindhoven Airport</td>
-                    <td className="py-4 px-6 text-center text-gray-600">ca. 45 min</td>
-                    <td className="py-4 px-6 text-right">
-                      <span className="text-gray-400 line-through mr-2">€150</span>
-                      <span className="text-2xl font-bold text-[#1a5f3f]">€119</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-6 font-semibold">Rotterdam The Hague Airport</td>
-                    <td className="py-4 px-6 text-center text-gray-600">ca. 35 min</td>
-                    <td className="py-4 px-6 text-right">
-                      <span className="text-gray-400 line-through mr-2">€120</span>
-                      <span className="text-2xl font-bold text-[#1a5f3f]">€89</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="text-center text-sm text-gray-500 py-3 bg-gray-100">
-                * Prijzen zijn indicatief en kunnen variëren afhankelijk van de exacte ophaallocatie
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Airport Cards */}
-        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Kies uw Bestemming
+              Naar Welke Luchthaven?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {airports.map((airport, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                   <Plane className="w-12 h-12 text-[#1a5f3f] mb-4" />
                   <h3 className="text-2xl font-bold mb-2">{airport.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-gray-400 line-through mr-2">{airport.oldPrice}</span>
-                    <span className="text-3xl font-bold text-[#1a5f3f]">{airport.price}</span>
-                  </div>
                   <p className="text-gray-500 mb-4">{airport.time} vanuit Gorinchem</p>
                   <ul className="space-y-2 mb-6">
                     {airport.features.map((feature, i) => (
@@ -151,59 +98,6 @@ export default function LuchthavenvervoerPage() {
                   </a>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Content Sections */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Onze Luchthavendiensten
-            </h2>
-            
-            <div className="space-y-12">
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-[#1a5f3f]">Taxi naar Schiphol vanuit Gorinchem</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Wilt u stressvrij op vakantie vertrekken vanuit Gorinchem? Onze taxi naar Schiphol biedt de perfecte oplossing. 
-                  Voor slechts <strong>€129</strong> brengen wij u van deur tot vertrekhal in ongeveer 60 minuten. Geen gedoe met 
-                  parkeren of het sjouwen met koffers in het openbaar vervoer. Onze professionele chauffeur haalt u thuis op, 
-                  helpt met de bagage en zorgt ervoor dat u ruim op tijd arriveert.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Dankzij ons flight tracking systeem houden wij uw vlucht in de gaten en passen wij de ophaaltijd aan bij vertraging. 
-                  Boek uw taxi naar Schiphol eenvoudig via WhatsApp en profiteer van onze vaste lage prijs zonder verborgen kosten.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-[#1a5f3f]">Taxi naar Eindhoven Airport</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Eindhoven Airport is steeds populairder voor zowel zakelijke reizen als vakanties. Met onze taxi van Gorinchem 
-                  naar Eindhoven Airport reist u comfortabel in ongeveer 45 minuten voor slechts <strong>€119</strong>. Ideaal voor 
-                  vluchten met budgetmaatschappijen of zakenrelaties in het zuiden van Nederland.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Onze chauffeurs kennen de snelste routes en houden rekening met het verkeer rondom de randweg van Eindhoven. 
-                  Of u nu vroeg in de ochtend of laat in de avond vliegt, wij staan 24/7 voor u klaar. Reserveer uw rit vooraf 
-                  en reis met een gerust hart naar Eindhoven Airport.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-[#1a5f3f]">Taxi naar Rotterdam The Hague Airport</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Voor vluchten binnen Europa is Rotterdam The Hague Airport een uitstekende keuze. Vanuit Gorinchem bent u met 
-                  onze taxi in slechts 35 minuten op de luchthaven voor maar <strong>€89</strong> — onze voordeligste optie! 
-                  De kleinschalige luchthaven betekent minder drukte en sneller inchecken.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Onze chauffeur brengt u rechtstreeks naar de vertrekhal zonder omwegen. Door de korte reistijd is dit ook 
-                  perfect geschikt voor last-minute boekingen. Wacht niet langer en boek uw taxi naar Rotterdam Airport vandaag 
-                  nog via WhatsApp voor deze scherpe vaste prijs.
-                </p>
-              </div>
             </div>
           </div>
         </section>
