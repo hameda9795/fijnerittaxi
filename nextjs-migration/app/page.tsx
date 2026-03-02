@@ -333,7 +333,7 @@ export default function Home() {
                     <li><Link href="/prive-ophaalservice" className="text-gray-400 hover:text-white transition-colors">Privé Ophaalservice</Link></li>
                     <li><Link href="/leerlingenvervoer-gorinchem" className="text-gray-400 hover:text-white transition-colors">Leerlingenvervoer</Link></li>
                     <li><Link href="/zorgvervoer-gorinchem" className="text-gray-400 hover:text-white transition-colors">Zorgvervoer</Link></li>
-                    <li><Link href="/zakelijk-vervoer" className="text-gray-400 hover:text-white transition-colors">Zakelijk vervoer</Link></li>
+                    <li><Link href="/zakelijk-vervoer" className="text-gray-400 hover:text-white transition-colors">Zakelijk vervoer</Link></li>\n                    <li><Link href="/goedkope-taxi-gorinchem" className="text-gray-400 hover:text-emerald-400 transition-colors">Goedkope Taxi</Link></li>
                   </ul>
                 </div>
                 <div>
@@ -364,3 +364,4 @@ export default function Home() {
     </>
   );
 }
+
