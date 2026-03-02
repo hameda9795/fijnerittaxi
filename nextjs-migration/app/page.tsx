@@ -186,7 +186,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src="/images/car-interior.jpg" alt="Fijn Rit Taxi Interieur" width={600} height={400} className="w-full h-auto" />
+                  <Image src="/images/car-interior.jpg" loading="lazy" decoding="async" alt="Fijn Rit Taxi Interieur" width={600} height={400} className="w-full h-auto" />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
                   <div className="flex items-center gap-4">
@@ -312,7 +312,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
                   <div className="bg-white rounded-lg p-3 inline-block mb-6">
-                    <Image src="/images/logo.png" alt="Fijn Rit Taxi" width={120} height={48} className="h-12 w-auto" />
+                    <Image src="/images/logo.png" loading="lazy" decoding="async" alt="Fijn Rit Taxi" width={120} height={48} className="h-12 w-auto" />
                   </div>
                   <p className="text-gray-400 leading-relaxed">Fijn Rit Taxi is uw betrouwbare partner voor al uw vervoersbehoeften in Gorinchem en omgeving.</p>
                 </div>
@@ -364,3 +364,5 @@ export default function Home() {
     </>
   );
 }
+
+
