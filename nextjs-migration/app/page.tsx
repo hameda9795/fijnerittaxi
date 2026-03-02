@@ -40,12 +40,12 @@ export const metadata: Metadata = {
 const WA_LINK = "https://wa.me/31643463636";
 
 const services = [
-  { id: 1, title: "Luchthavenvervoer", description: "Betrouwbaar vervoer naar Schiphol, Eindhoven en Rotterdam Airport met vaste, voordelige tarieven. Wij zorgen voor een stressvrije start van uw reis.", image: "/images/service-airport.jpg", icon: Plane },
-  { id: 2, title: "Privé Ophaalservice", description: "Persoonlijke ophaalservice aan huis met professionele chauffeurs. Comfortabel en veilig vervoer voor al uw privé ritten in Gorinchem en omgeving.", image: "/images/service-private.jpg", icon: Car },
-  { id: 3, title: "Interstedelijke ritten", description: "Comfortabel vervoer tussen steden door heel Nederland. Of u nu naar Amsterdam, Rotterdam of Den Haag moet, wij brengen u er stipt op tijd.", image: "/images/service-intercity.jpg", icon: MapPin },
-  { id: 4, title: "Leerlingenvervoer", description: "Veilig en betrouwbaar vervoer voor scholieren. Ouders kunnen met een gerust hart hun kinderen aan onze zorg toevertrouwen voor schooltransport.", image: "/images/service-student.jpg", icon: Users },
-  { id: 5, title: "Zorgvervoer", description: "Speciaal vervoer voor zorginstellingen en patiënten. Wij werken samen met zorgverleners en bieden comfortabel vervoer voor mensen met speciale zorgbehoeften.", image: "/images/service-care.jpg", icon: Heart },
-  { id: 6, title: "Zakelijk vervoer", description: "Professioneel zakelijk vervoer voor bedrijven en organisaties. Representatieve chauffeurs en luxe voertuigen voor uw zakelijke relaties.", image: "/images/service-business.jpg", icon: Briefcase },
+  { id: 1, title: "Luchthavenvervoer", description: "Betrouwbaar vervoer naar Schiphol, Eindhoven en Rotterdam Airport met vaste, voordelige tarieven. Wij zorgen voor een stressvrije start van uw reis.", image: "/images/service-airport.jpg", icon: Plane, link: "/luchthavenvervoer" },
+  { id: 2, title: "Privé Ophaalservice", description: "Persoonlijke ophaalservice aan huis met professionele chauffeurs. Comfortabel en veilig vervoer voor al uw privé ritten in Gorinchem en omgeving.", image: "/images/service-private.jpg", icon: Car, link: "/prive-ophaalservice" },
+  { id: 3, title: "Interstedelijke ritten", description: "Comfortabel vervoer tussen steden door heel Nederland. Of u nu naar Amsterdam, Rotterdam of Den Haag moet, wij brengen u er stipt op tijd.", image: "/images/service-intercity.jpg", icon: MapPin, link: "#" },
+  { id: 4, title: "Leerlingenvervoer", description: "Veilig en betrouwbaar vervoer voor scholieren. Ouders kunnen met een gerust hart hun kinderen aan onze zorg toevertrouwen voor schooltransport.", image: "/images/service-student.jpg", icon: Users, link: "/leerlingenvervoer-gorinchem" },
+  { id: 5, title: "Zorgvervoer", description: "Speciaal vervoer voor zorginstellingen en patiënten. Wij werken samen met zorgverleners en bieden comfortabel vervoer voor mensen met speciale zorgbehoeften.", image: "/images/service-care.jpg", icon: Heart, link: "/zorgvervoer-gorinchem" },
+  { id: 6, title: "Zakelijk vervoer", description: "Professioneel zakelijk vervoer voor bedrijven en organisaties. Representatieve chauffeurs en luxe voertuigen voor uw zakelijke relaties.", image: "/images/service-business.jpg", icon: Briefcase, link: "/zakelijk-vervoer" },
 ];
 
 const reviews = [
@@ -113,7 +113,7 @@ export default function Home() {
                 Veilig, Comfortabel en <span className="text-[#c9a227]">Stipt</span> Reizen
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                Fijn Rit Taxi brengt u op tijd naar uw bestemming. Met schone, comfortabele auto&apos;s en professionele chauffeurs bent u bij ons in goede handen.
+                Fijn Rit Taxi brengt u op tijd naar uw bestemming. Met schone, comfortabele auto's en professionele chauffeurs bent u bij ons in goede handen.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp justify-center">
@@ -168,7 +168,7 @@ export default function Home() {
                     <div className="absolute bottom-4 left-4"><s.icon className="w-8 h-8 text-[#c9a227]" /></div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+                    <Link href={s.link} className="text-xl font-bold mb-3 hover:text-[#1a5f3f] transition-colors block">{s.title}</Link>
                     <p className="text-gray-600 mb-4 text-sm leading-relaxed">{s.description}</p>
                     <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="w-full btn-whatsapp justify-center text-sm py-2.5">
                       <MessageCircle className="w-4 h-4" />Boek Nu via WhatsApp
@@ -329,11 +329,11 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-bold mb-6">Onze Diensten</h3>
                   <ul className="space-y-3">
-                    <li className="text-gray-400">Luchthavenvervoer</li>
-                    <li className="text-gray-400">Privé Ophaalservice</li>
-                    <li className="text-gray-400">Leerlingenvervoer</li>
-                    <li className="text-gray-400">Zorgvervoer</li>
-                    <li className="text-gray-400">Zakelijk vervoer</li>
+                    <li><Link href="/luchthavenvervoer" className="text-gray-400 hover:text-white transition-colors">Luchthavenvervoer</Link></li>
+                    <li><Link href="/prive-ophaalservice" className="text-gray-400 hover:text-white transition-colors">Privé Ophaalservice</Link></li>
+                    <li><Link href="/leerlingenvervoer-gorinchem" className="text-gray-400 hover:text-white transition-colors">Leerlingenvervoer</Link></li>
+                    <li><Link href="/zorgvervoer-gorinchem" className="text-gray-400 hover:text-white transition-colors">Zorgvervoer</Link></li>
+                    <li><Link href="/zakelijk-vervoer" className="text-gray-400 hover:text-white transition-colors">Zakelijk vervoer</Link></li>
                   </ul>
                 </div>
                 <div>
@@ -364,5 +364,3 @@ export default function Home() {
     </>
   );
 }
-
-
